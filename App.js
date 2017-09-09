@@ -1,22 +1,20 @@
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, View } from 'react-native'
 
 import Sources from './components/Sources'
-
 
 export default class App extends React.Component {
   render() {
     return (
-      <Sources />
+      <View style={styles.container}>
+        <Sources />
+      </View>
     )
   }
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    marginTop: 20,
   },
 });

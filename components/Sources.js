@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, TouchableOpacity, View } from 'react-native'
+import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 
 import Posts from './Posts';
 import { urls } from '../data/urls';
@@ -38,7 +38,7 @@ class Sources extends Component {
     const sourceNames = this._showSources()
 
     return (
-      <View>
+      <View style={styles.container}>
         <Text>News sources available</Text>
           <View>{sourceNames}</View>
           {
@@ -57,3 +57,9 @@ class Sources extends Component {
 }
 
 export default Sources
+
+const styles = StyleSheet.create({
+  container: {
+    alignItems: 'center',
+  },
+});
