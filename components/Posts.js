@@ -32,15 +32,22 @@ class Posts extends Component {
   _buildURL = (url, endpoint) => url.concat(endpoint)
 
   _fetchPosts(url) {
-    return fetch(url, {mode: 'no-cors'})
-            .then((response) => response.json())
-            .then((json) => {
-              this.setState({
-                dataSource: this.state.dataSource.cloneWithRows(json)
-              })
-            })
-            .catch((error) => console.error(`Error in response: ${error}`))
-            .done()
+    return fetch(url, {
+      method: 'GET',
+      mode: 'no-cors',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => {
+        this.setState({
+          dataSource: this.state.dataSource.cloneWithRows(json)
+        })
+      })
+      .catch((error) => console.error(`Error in response: ${error}`))
+      .done()
   }
 
 
