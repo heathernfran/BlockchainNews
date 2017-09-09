@@ -1,13 +1,27 @@
-import React from 'react'
+import React, { Component } from 'react'
+import { StyleSheet, Text, View, WebView } from 'react-native'
 
+class Post extends Component {
+  constructor(props) {
+    super(props)
+  }
 
-import { Text, View, WebView } from 'react-native'
-
-const Post = (props) => (
-  // <WebView source={{html: props.title.rendered}} />
-  <View key={props.id}>
-    <Text>{props.title.rendered}</Text>
-  </View>
-)
+  render() {
+    return (
+      <WebView
+        ref={'webview'}
+        automaticallyAdjustContentInsets={false}
+        source={{html: this.props.title.rendered}}
+        style={styles.container} />
+    )
+  }
+}
 
 export default Post
+
+const styles = StyleSheet.create({
+  container: {
+    width: 300,
+    height: 100
+  }
+})
