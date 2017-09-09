@@ -8,7 +8,7 @@ import Post from './Post'
 const crossOrigin = 'https://cors-anywhere.herokuapp.com/',
       postsEndpoint = '/wp-json/wp/v2/posts'
 
-class Posts extends Component {
+export default class Posts extends Component {
   constructor(props) {
     super(props)
 
@@ -60,5 +60,3 @@ class Posts extends Component {
     )
   }
 }
-
-export default Posts

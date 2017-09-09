@@ -4,7 +4,7 @@ import { StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import Posts from './Posts';
 import { urls } from '../data/urls';
 
-class Sources extends Component {
+export default class Sources extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -55,8 +55,6 @@ class Sources extends Component {
     );
   }
 }
-
-export default Sources
 
 const styles = StyleSheet.create({
   container: {
